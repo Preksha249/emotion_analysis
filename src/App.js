@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import HomePage from "./components/HomePage";
+import Sidebar from "./components/Sidebar";
+import Sentiment from "./components/Sentiment";
+import About from "./components/About";
+
 
 function App() {
+
+  const [isPage, setIsPage] = useState(null)
+  console.log("ispage mail", isPage)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex">
+      <div className="fixed left-0 top-0 h-full bg-gray-800 p-4 w-64">
+        <Sidebar isPage={isPage} setIsPage={setIsPage} />
+      </div>
+      <div className="ml-64 w-full p-4">
+        {isPage === "home" ? <HomePage /> : (isPage === 'analytics' ? <Sentiment /> : <About />)}
+      </div>
     </div>
   );
 }

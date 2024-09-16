@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import Positive from './Positive';
+import Negative from './Negative';
+import Neutral from './Neutral';
 
 const Sentiment = () => {
     const [sentence, setSentence] = useState('');
-    const [text, setText] = useState('');
     const [processedText, setProcessedText] = useState('');
 
     const handleSentenceInput = (text) => {
@@ -22,7 +24,7 @@ const Sentiment = () => {
 
         try {
             // Call the FastAPI endpoint
-            const response = await fetch('http://127.0.0.1:8000/analyze', {
+            const response = await fetch('https://emotion-analysis-backend-production.up.railway.app/analyze', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -35,7 +37,7 @@ const Sentiment = () => {
             }
     
             const result = await response.json();
-            console.log("result",result)
+            // console.log("result",result)
     
             // Set the processed text to state
             setProcessedText(result.classification);
@@ -58,7 +60,7 @@ const Sentiment = () => {
                 /><button type='submit'>Submit</button>
             </form>
         </div >
-        <a>{processedText}</a>
+        <a>{processedText === 'Positive' ? <Positive/> : processedText === 'Negative' ? <Negative/> : processedText === 'Neutral' ? <Neutral/> : <div></div> }</a>
         </div>
     )
 }

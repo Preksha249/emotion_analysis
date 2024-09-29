@@ -7,7 +7,7 @@ import About from "./components/About";
 
 function App() {
 
-  const [isPage, setIsPage] = useState(null)
+  const [isPage, setIsPage] = useState('home')
   console.log("ispage mail", isPage)
 
   return (

@@ -1,5 +1,7 @@
 import React from 'react'
-import { HomeIcon, InformationCircleIcon, InboxIcon, UserIcon, ShoppingBagIcon, UserPlusIcon, FaceSmileIcon, ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, FaceSmileIcon,
+    // InformationCircleIcon, InboxIcon, UserIcon, ShoppingBagIcon, UserPlusIcon, ChatBubbleOvalLeftEllipsisIcon 
+} from '@heroicons/react/24/outline';
 import HomePage from './HomePage';
 function Sidebar({ isPage, setIsPage }) {
 
@@ -11,8 +13,9 @@ function Sidebar({ isPage, setIsPage }) {
                 break;
             case 'analytics': setIsPage(feature)
                 break;
-            case 'about': setIsPage(feature)
-                break;
+            // case 'about': setIsPage(feature)
+            //     break;
+            default : setIsPage("home")
         }
 
     }
@@ -33,12 +36,12 @@ function Sidebar({ isPage, setIsPage }) {
                         Emotion Analytics
                     </a>
                 </li>
-                <li>
+                {/* <li>
                     <a href="#kanban" onClick={() => renderPage('about')} className="flex items-center text-white hover:bg-gray-700 p-2 rounded-lg">
                         <InformationCircleIcon className="w-6 h-6 mr-3" />
                         About
                     </a>
-                </li>
+                </li> */}
                 {/* <li>
                     <a href="#sign-in" className="flex items-center text-white hover:bg-gray-700 p-2 rounded-lg">
                         <ArrowRightOnRectangleIcon className="w-6 h-6 mr-3" />

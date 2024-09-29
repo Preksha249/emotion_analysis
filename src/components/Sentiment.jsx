@@ -60,7 +60,9 @@ const Sentiment = () => {
                 /><button type='submit'>Submit</button>
             </form>
         </div >
-        <a>{processedText === 'Positive' ? <Positive/> : processedText === 'Negative' ? <Negative/> : processedText === 'Neutral' ? <Neutral/> : <div></div> }</a>
+        <br/>
+        <div>
+            {processedText === 'Positive' ? <Positive/> : processedText === 'Negative' ? <Negative/> : processedText === 'Neutral' ? <Neutral/> : <div></div> }</div>
         </div>
     )
 }

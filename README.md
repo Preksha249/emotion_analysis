@@ -14,7 +14,7 @@ A web-based sentiment analysis tool built using React, JavaScript, CSS, and HTML
 
 - **Real-Time Sentiment Analysis**: Analyze user input and display sentiment results dynamically.
 - **User-Friendly Interface**: A clean and responsive UI built with CSS and HTML.
-- **Interactive Visuals**: Display sentiment scores with graphs, icons, or color codes.
+- **Interactive Visuals**: Display sentiment icons or Emoji.
 - **Lightweight**: Optimized for fast performance and easy deployment.
 
 ---
